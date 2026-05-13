@@ -834,25 +834,28 @@ select:focus { border-color: var(--accent); }
 
   .etapa-table {
     width: 100%;
-    table-layout: fixed;
   }
 
-  .etapa-table td,
-  .etapa-table th {
-    font-size: 13px;
-    padding: 14px 6px;
-    word-break: break-word;
+  .etapa-table th,
+  .etapa-table td {
+    padding: 12px 4px;
+    font-size: 12px;
   }
 
-  .etapa-table .val-col {
-    min-width: unset;
+  .etapa-table th:first-child,
+  .etapa-table td:first-child {
+    width: 42%;
   }
 
   .etapa-table input {
-    width: 58px;
-    min-width: 58px;
+    width: 52px;
+    min-width: 52px;
   }
 
+  .etapa-table .val-col {
+    white-space: nowrap;
+    font-size: 11px;
+  }
 }
 /* parcela grid */
 .parcela-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
