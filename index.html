@@ -1166,7 +1166,22 @@ body {
   <input type="password" id="authPassword" placeholder="••••••••" autocomplete="current-password">
 
   <button type="button" class="toggle-password" onclick="togglePassword()">
-    👁
+
+<svg id="eyeIcon"
+width="20"
+height="20"
+viewBox="0 0 24 24"
+fill="none"
+stroke="currentColor"
+stroke-width="1.7"
+stroke-linecap="round"
+stroke-linejoin="round">
+
+<path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+
+<circle cx="12" cy="12" r="3"/>
+
+</svg>
   </button>
 </div>
         <div class="auth-field" id="nameField" style="display:none">
@@ -1717,12 +1732,33 @@ function doLogout() {
   document.getElementById('authMsg').innerHTML = '';
 }
 function togglePassword() {
+
   const input = document.getElementById('authPassword');
 
+  const icon = document.getElementById('eyeIcon');
+
   if (input.type === 'password') {
+
     input.type = 'text';
+
+    icon.innerHTML = `
+      <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19
+      c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-5.94"/>
+
+      <path d="M1 1l22 22"/>
+
+      <path d="M9.53 9.53a3 3 0 0 0 4.24 4.24"/>
+    `;
+
   } else {
+
     input.type = 'password';
+
+    icon.innerHTML = `
+      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
+
+      <circle cx="12" cy="12" r="3"/>
+    `;
   }
 }
 function enterApp() {
