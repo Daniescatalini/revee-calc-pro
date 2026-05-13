@@ -165,6 +165,36 @@ body {
   transition: border-color 0.15s;
 }
 .auth-field input:focus { border-color: var(--accent); }
+  .password-wrap {
+  position: relative;
+}
+
+.password-wrap input {
+  padding-right: 52px;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  
+  background: transparent;
+  border: none;
+
+  cursor: pointer;
+
+  font-size: 16px;
+
+  opacity: 0.45;
+
+  transition: all 0.2s ease;
+}
+
+.toggle-password:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
 .auth-btn {
   width: 100%;
   padding: 13px;
@@ -1147,8 +1177,13 @@ body {
         </div>
         <div class="auth-field">
           <label>Senha</label>
-          <input type="password" id="authPassword" placeholder="••••••••" autocomplete="current-password">
-        </div>
+          <div class="password-wrap">
+  <input type="password" id="authPassword" placeholder="••••••••" autocomplete="current-password">
+
+  <button type="button" class="toggle-password" onclick="togglePassword()">
+    👁
+  </button>
+</div>
         <div class="auth-field" id="nameField" style="display:none">
           <label>Seu nome</label>
           <input type="text" id="authName" placeholder="Como quer ser chamada?">
