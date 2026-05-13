@@ -1731,7 +1731,15 @@ function doLogout() {
 
   document.getElementById('authMsg').innerHTML = '';
 }
+function togglePassword() {
+  const input = document.getElementById('authPassword');
 
+  if (input.type === 'password') {
+    input.type = 'text';
+  } else {
+    input.type = 'password';
+  }
+}
 function enterApp() {
 
   document.getElementById('authScreen').style.display = 'none';
