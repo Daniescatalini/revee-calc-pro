@@ -39,7 +39,6 @@ body {
   min-height: 100vh;
   font-size: 15px;
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 /* ───── AUTH SCREEN ───── */
@@ -803,7 +802,12 @@ select:focus { border-color: var(--accent); }
 .save-indicator::before { content: '✓'; font-weight: 700; }
 
 /* ETAPA TABLE */
-.etapa-table { width: 100%; border-collapse: collapse; }
+.etapa-table {
+  width: 100%;
+  max-width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
 .etapa-table th { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); text-align: left; padding: 0 8px 8px; border-bottom: 1px solid var(--paper-3); }
 .etapa-table th:not(:first-child) { text-align: right; }
 .etapa-table td { padding: 8px; vertical-align: middle; font-size: 13px; border-bottom: 1px solid var(--paper-2); }
@@ -1069,8 +1073,6 @@ body {
 .auth-hero,
 .auth-footer,
 .tab-panel {
-  max-width: 100%;
-  overflow-x: hidden;
 }
 </style>
 </head>
