@@ -1647,23 +1647,29 @@ if (isLoginMode) {
 
   } else {
 
-    if (!name) {
-      showAuthMsg('Informe seu nome.');
-      return;
+if (!name) {
+  showAuthMsg('Informe seu nome.');
+  return;
+}
+
+const { data, error } = await supabase.auth.signUp({
+  email: email,
+  password: pass,
+  options: {
+    data: {
+      name: name
     }
+  }
+});
 
-    if (db[email]) {
-      showAuthMsg('Já existe uma conta com este e-mail.');
-      return;
-    }
+if (error) {
+  showAuthMsg(error.message);
+  return;
+}
 
-    db[email] = {
-      name: name,
-      password: pass,
-      custos: {}
-    };
+showAuthMsg('Conta criada! Verifique seu e-mail ✨');
 
-    saveDB(db);
+return;
 
     currentUser = {
       email: email,
