@@ -164,7 +164,12 @@ body {
   outline: none;
   transition: border-color 0.15s;
 }
-.auth-field input:focus { border-color: var(--accent); }
+.auth-field input:focus {
+  border-color: #abbf96;
+  box-shadow: 0 0 0 3px rgba(171, 191, 150, 0.15);
+  outline: none;
+}
+  
 .password-wrap {
 ...
 }
@@ -1358,7 +1363,7 @@ body {
         <div class="auth-field">
           <label>Senha</label>
           <div class="password-wrap">
-  <input type="password" id="authPassword" placeholder="••••••••" autocomplete="current-password">
+ <input type="password" id="authPassword" placeholder="Sua senha" autocomplete="current-password">
 
  <button
   type="button"
