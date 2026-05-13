@@ -2207,5 +2207,34 @@ window.sb = window.supabase.createClient(
   SUPABASE_KEY
 );
 </script>
+  <div id="resetModal" class="reset-modal">
+
+  <div class="reset-box">
+
+    <h3>Crie sua nova senha</h3>
+
+    <p>
+      Digite uma nova senha para acessar sua conta.
+    </p>
+
+    <input
+      type="password"
+      id="newPassword"
+      placeholder="Nova senha"
+    >
+
+    <input
+      type="password"
+      id="confirmPassword"
+      placeholder="Confirmar senha"
+    >
+
+    <button onclick="updatePassword()">
+      Salvar nova senha
+    </button>
+
+  </div>
+
+</div>
 </body>
 </html>
