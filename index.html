@@ -1625,7 +1625,7 @@ async function doAuth() {
 
 if (isLoginMode) {
 
-  const { data, error } = await supabase.auth.signInWithPassword({
+  const { data, error } = await window.sb.auth.signInWithPassword({
     email: email,
     password: pass
   });
@@ -1652,7 +1652,7 @@ if (!name) {
   return;
 }
 
-const { data, error } = await supabase.auth.signUp({
+const { data, error } = await window.sb.auth.signUp({
   email: email,
   password: pass,
   options: {
@@ -2046,7 +2046,7 @@ function showTab(name) {
 const SUPABASE_URL = 'https://seowusebxomcgxupdopv.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_Am0IJLIXRX-sTpt6JccT2g_JBfux9AC';
 
-const supabase = window.supabase.createClient(
+window.sb = window.supabase.createClient(
   SUPABASE_URL,
   SUPABASE_KEY
 );
