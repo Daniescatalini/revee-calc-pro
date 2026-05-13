@@ -1623,25 +1623,27 @@ async function doAuth() {
     return;
   }
 
-  const db = getDB();
+if (isLoginMode) {
 
-  if (isLoginMode) {
+  const { data, error } = await supabase.auth.signInWithPassword({
+    email: email,
+    password: pass
+  });
 
-    const user = db[email];
+  if (error) {
+    showAuthMsg(error.message);
+    return;
+  }
 
-    if (!user || user.password !== pass) {
-      showAuthMsg('E-mail ou senha inválidos.');
-      return;
-    }
+  currentUser = {
+    email: data.user.email,
+    name: data.user.user_metadata?.name || 'Usuário'
+  };
 
-    currentUser = {
-      email: email,
-      name: user.name
-    };
+  saveSession(currentUser);
 
-    saveSession(currentUser);
-
-    enterApp();
+  enterApp();
+}
 
   } else {
 
