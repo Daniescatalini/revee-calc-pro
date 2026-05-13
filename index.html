@@ -1912,6 +1912,29 @@ function togglePassword() {
     `;
   }
 }
+  }
+  
+async function forgotPassword() {
+
+  const email = document.getElementById('authEmail').value.trim();
+
+  if (!email) {
+    showAuthMsg('Digite seu e-mail para recuperar a senha.');
+    return;
+  }
+
+  const { error } = await sb.auth.resetPasswordForEmail(email, {
+    redirectTo: window.location.origin
+  });
+
+  if (error) {
+    showAuthMsg(error.message);
+  } else {
+    showAuthMsg('Enviamos um link de recuperação para seu e-mail.', 'ok');
+  }
+}
+
+function enterApp() {
 function enterApp() {
 
   document.getElementById('authScreen').style.display = 'none';
