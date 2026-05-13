@@ -1392,13 +1392,13 @@ body {
           <input type="text" id="authName" placeholder="Como quer ser chamada?">
         </div>
           <div class="forgot-password-wrap">
-  <button
-    type="button"
-    class="forgot-password-btn"
-    onclick="resetPassword()"
-  >
-    Esqueci minha senha.
-  </button>
+  <button 
+  class="forgot-password-btn"
+  type="button"
+  onclick="forgotPassword()"
+>
+  Esqueci minha senha
+</button>
 </div>
         <button class="auth-btn" onclick="doAuth()" id="authSubmitBtn">Entrar</button>
         <div id="authMsg"></div>
@@ -2333,6 +2333,13 @@ function showTab(name) {
 
 /* INIT */
 (function init() {
+  const hash = window.location.hash;
+
+if (hash.includes('type=recovery')) {
+
+  document.getElementById('resetPasswordModal')
+    .style.display = 'flex';
+}
   const session = loadSession();
   if (session) { currentUser = session; document.getElementById('authScreen').style.display = 'none'; enterApp(); }
 })();
