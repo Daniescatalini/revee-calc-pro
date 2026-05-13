@@ -229,6 +229,33 @@ body {
   width: 20px;
   height: 20px;
 }
+  .forgot-password-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+.forgot-password-btn {
+  background: transparent;
+  border: none;
+
+  color: #abbf96;
+
+  font-family: var(--font);
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  padding: 0;
+
+  transition: opacity 0.15s ease;
+}
+
+.forgot-password-btn:hover {
+  opacity: 0.7;
+}
 .auth-btn {
   width: 100%;
   padding: 13px;
@@ -1251,7 +1278,7 @@ body {
     class="forgot-password-btn"
     onclick="resetPassword()"
   >
-    Esqueceu sua senha?
+    Esqueci minha senha.
   </button>
 </div>
         <button class="auth-btn" onclick="doAuth()" id="authSubmitBtn">Entrar</button>
