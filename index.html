@@ -1002,6 +1002,37 @@ select:focus { border-color: var(--accent); }
     }
 
 }
+  .auth-hero,
+.auth-footer {
+  background-size: cover;
+  background-position: center;
+}
+
+@media (max-width: 768px) {
+
+  .auth-hero {
+    min-height: auto;
+    padding: 42px 24px 56px;
+    border-radius: 0 0 32px 32px;
+    background-position: center top;
+  }
+
+  .auth-hero h1 {
+    font-size: clamp(2.2rem, 9vw, 3.5rem);
+    line-height: 0.95;
+  }
+
+  .auth-hero p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .auth-footer {
+    border-radius: 32px 32px 0 0;
+    padding: 48px 24px;
+    background-position: center bottom;
+  }
+
 </style>
 </head>
 <body>
