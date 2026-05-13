@@ -348,7 +348,68 @@ body {
 .reset-box button:hover {
   opacity: 0.9;
 }
+#resetPasswordModal .reset-box {
+  max-width: 420px;
+}
 
+#resetPasswordModal h2 {
+  font-size: 32px;
+  color: #101d03;
+  margin-bottom: 22px;
+  font-weight: 600;
+}
+
+#resetPasswordModal input {
+  width: 100%;
+  height: 54px;
+
+  border: 1px solid #d9ddd2;
+  border-radius: 14px;
+
+  padding: 0 18px;
+
+  font-size: 15px;
+
+  background: #fff;
+
+  margin-bottom: 14px;
+
+  transition: 0.2s;
+}
+
+#resetPasswordModal input:focus {
+  border-color: #abbf96;
+  outline: none;
+}
+
+#resetPasswordModal button {
+  width: 100%;
+  height: 54px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: #101d03;
+  color: white;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+#resetPasswordModal button:hover {
+  opacity: 0.92;
+}
+
+#resetMsg {
+  margin-top: 14px;
+  font-size: 14px;
+  color: #5c5f57;
+  text-align: center;
+}
 /* ───── MAIN APP ───── */
 .app-screen { display: none; flex-direction: column; min-height: 100vh; }
 .app-screen.visible { display: flex; }
@@ -2311,6 +2372,33 @@ window.sb = window.supabase.createClient(
     <button onclick="updatePassword()">
       Salvar nova senha
     </button>
+
+  </div>
+
+</div>
+  <div id="resetPasswordModal" class="reset-modal" style="display:none;">
+
+  <div class="reset-box">
+
+    <h2>Nova senha</h2>
+
+    <input
+      type="password"
+      id="newPassword"
+      placeholder="Digite sua nova senha"
+    >
+
+    <input
+      type="password"
+      id="confirmPassword"
+      placeholder="Confirme sua nova senha"
+    >
+
+    <button onclick="updatePassword()">
+      Salvar nova senha
+    </button>
+
+    <div id="resetMsg"></div>
 
   </div>
 
