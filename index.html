@@ -1032,7 +1032,19 @@ select:focus { border-color: var(--accent); }
     padding: 48px 24px;
     background-position: center bottom;
   }
+html,
+body {
+  overflow-x: hidden;
+}
 
+.app-shell,
+.auth-screen,
+.auth-hero,
+.auth-footer,
+.tab-panel {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 </style>
 </head>
 <body>
