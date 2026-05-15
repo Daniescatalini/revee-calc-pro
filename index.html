@@ -164,103 +164,7 @@ body {
   outline: none;
   transition: border-color 0.15s;
 }
-.auth-field input:focus {
-  border-color: #abbf96;
-  box-shadow: 0 0 0 3px rgba(171, 191, 150, 0.15);
-  outline: none;
-}
-  
-.password-wrap {
-...
-}
-
-.password-wrap input {
-...
-}
-
-.toggle-password {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  background: transparent;
-  border: none;
-
-  width: 20px;
-  height: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #7d7d86;
-  cursor: pointer;
-
-  padding: 0;
-}
-
-.toggle-password svg {
-  width: 20px;
-  height: 20px;
-}
-  .password-wrap {
-  position: relative;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  background: transparent;
-  border: none;
-
-  width: 20px;
-  height: 20px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  color: #7d7d86;
-  cursor: pointer;
-
-  padding: 0;
-}
-
-.toggle-password svg {
-  width: 20px;
-  height: 20px;
-}
-  .forgot-password-wrap {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 10px;
-  margin-bottom: 18px;
-}
-
-.forgot-password-btn {
-  background: transparent;
-  border: none;
-
-  color: #abbf96;
-
-  font-family: var(--font);
-  font-size: 13px;
-  font-weight: 500;
-
-  cursor: pointer;
-
-  padding: 0;
-
-  transition: opacity 0.15s ease;
-}
-
-.forgot-password-btn:hover {
-  opacity: 0.7;
-}
+.auth-field input:focus { border-color: var(--accent); }
 .auth-btn {
   width: 100%;
   padding: 13px;
@@ -295,126 +199,41 @@ body {
   margin-top: 1rem;
   line-height: 1.6;
 }
-  .reset-modal {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  z-index: 999;
-  backdrop-filter: blur(4px);
-}
-
-.reset-box {
-  width: 100%;
-  max-width: 420px;
-  background: #f2f2f2;
-  border-radius: 24px;
-  padding: 32px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
-}
-
-.reset-box h3 {
-  font-size: 32px;
-  margin-bottom: 10px;
-  color: #101d03;
-}
-
-.reset-box p {
-  color: #6f6f79;
-  margin-bottom: 24px;
-  line-height: 1.5;
-}
-
-.reset-box input {
-  width: 100%;
-  padding: 16px;
-  border-radius: 14px;
-  border: 1px solid #d8d8de;
-  margin-bottom: 14px;
-  font-size: 16px;
-  background: white;
-}
-
-.reset-box button {
-  width: 100%;
-  border: none;
-  border-radius: 14px;
-  padding: 16px;
-  background: #abbf96;
-  color: white;
-  font-weight: 600;
-  font-size: 16px;
+.auth-link {
+  margin-top: 10px;
+  border: 0;
+  background: transparent;
+  color: var(--ink-3);
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.reset-box button:hover {
-  opacity: 0.9;
-}
-#resetPasswordModal .reset-box {
-  max-width: 420px;
-}
-
-#resetPasswordModal h2 {
-  font-size: 32px;
-  color: #101d03;
-  margin-bottom: 22px;
-  font-weight: 600;
-}
-
-#resetPasswordModal input {
-  width: 100%;
-  height: 54px;
-
-  border: 1px solid #d9ddd2;
-  border-radius: 14px;
-
-  padding: 0 18px;
-
-  font-size: 15px;
-
-  background: #fff;
-
-  margin-bottom: 14px;
-
-  transition: 0.2s;
-}
-
-#resetPasswordModal input:focus {
-  border-color: #abbf96;
-  outline: none;
-}
-
-#resetPasswordModal button {
-  width: 100%;
-  height: 54px;
-
-  border: none;
-  border-radius: 14px;
-
-  background: #101d03;
-  color: white;
-
-  font-size: 15px;
-  font-weight: 600;
-
-  cursor: pointer;
-
-  transition: 0.2s;
-}
-
-#resetPasswordModal button:hover {
-  opacity: 0.92;
-}
-
-#resetMsg {
-  margin-top: 14px;
-  font-size: 14px;
-  color: #5c5f57;
+  display: block;
+  font-family: var(--font);
+  font-size: 11px;
+  font-weight: 500;
   text-align: center;
+  width: 100%;
 }
+.auth-link:hover { color: var(--ink); }
+.auth-secondary-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+.auth-secondary-actions .auth-link { margin-top: 0; width: auto; }
+.auth-config-warning {
+  background: #FFF3CD;
+  border-radius: var(--radius-sm);
+  color: #6B4E00;
+  font-size: 11px;
+  line-height: 1.55;
+  margin-bottom: 12px;
+  padding: 10px 12px;
+}
+.auth-btn:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
 /* ───── MAIN APP ───── */
 .app-screen { display: none; flex-direction: column; min-height: 100vh; }
 .app-screen.visible { display: flex; }
@@ -1017,12 +836,7 @@ select:focus { border-color: var(--accent); }
 .save-indicator::before { content: '✓'; font-weight: 700; }
 
 /* ETAPA TABLE */
-.etapa-table {
-  width: 100%;
-  max-width: 100%;
-  table-layout: fixed;
-  border-collapse: collapse;
-}
+.etapa-table { width: 100%; border-collapse: collapse; }
 .etapa-table th { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-3); text-align: left; padding: 0 8px 8px; border-bottom: 1px solid var(--paper-3); }
 .etapa-table th:not(:first-child) { text-align: right; }
 .etapa-table td { padding: 8px; vertical-align: middle; font-size: 13px; border-bottom: 1px solid var(--paper-2); }
@@ -1049,33 +863,7 @@ select:focus { border-color: var(--accent); }
     min-width: 82px;
 }
 .etapa-total-row td { font-weight: 700; font-size: 14px; color: var(--ink); border-top: 2px solid var(--paper-3) !important; border-bottom: none; padding-top: 12px; }
-@media (max-width: 768px) {
 
-  .etapa-table {
-    width: 100%;
-  }
-
-  .etapa-table th,
-  .etapa-table td {
-    padding: 12px 4px;
-    font-size: 12px;
-  }
-
-  .etapa-table th:first-child,
-  .etapa-table td:first-child {
-    width: 42%;
-  }
-
-  .etapa-table input {
-    width: 52px;
-    min-width: 52px;
-  }
-
-  .etapa-table .val-col {
-    white-space: nowrap;
-    font-size: 11px;
-  }
-}
 /* parcela grid */
 .parcela-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; }
 .parcela-card { background: var(--paper); border: 1px solid var(--paper-3); border-radius: var(--radius-sm); padding: 10px 12px; text-align: center; }
@@ -1248,47 +1036,6 @@ select:focus { border-color: var(--accent); }
     }
 
 }
-  .auth-hero,
-.auth-footer {
-  background-size: cover;
-  background-position: center;
-}
-
-@media (max-width: 768px) {
-
-  .auth-hero {
-    min-height: auto;
-    padding: 42px 24px 56px;
-    border-radius: 0 0 32px 32px;
-    background-position: center top;
-  }
-
-  .auth-hero h1 {
-    font-size: clamp(2.2rem, 9vw, 3.5rem);
-    line-height: 0.95;
-  }
-
-  .auth-hero p {
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-  .auth-footer {
-    border-radius: 32px 32px 0 0;
-    padding: 48px 24px;
-    background-position: center bottom;
-  }
-html,
-body {
-  overflow-x: hidden;
-}
-
-.app-shell,
-.auth-screen,
-.auth-hero,
-.auth-footer,
-.tab-panel {
-}
 </style>
 </head>
 <body>
@@ -1342,6 +1089,9 @@ body {
   </div>
   <div class="auth-body">
     <div class="auth-card">
+      <div id="authConfigWarning" class="auth-config-warning" style="display:none">
+        Configure sua URL e chave pública do Supabase no final do arquivo para ativar login, cadastro e salvamento.
+      </div>
       <div class="auth-tabs">
     <button 
         class="auth-tab active" 
@@ -1362,50 +1112,21 @@ body {
         </div>
         <div class="auth-field">
           <label>Senha</label>
-          <div class="password-wrap">
- <input type="password" id="authPassword" placeholder="Sua senha" autocomplete="current-password">
-
- <button
-  type="button"
-  class="toggle-password"
-  onclick="togglePassword()"
->
-
-  <svg
-    id="eyeIcon"
-    xmlns="http://www.w3.org/2000/svg"
-    width="20"
-    height="20"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="1.7"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-  >
-
-    <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
-
-    <circle cx="12" cy="12" r="3"/>
-
-  </svg>
-
-</button>
-</div>
+          <input type="password" id="authPassword" placeholder="••••••••" autocomplete="current-password">
+        </div>
         <div class="auth-field" id="nameField" style="display:none">
           <label>Seu nome</label>
-          <input type="text" id="authName" placeholder="Como podemos te chamar?">
+          <input type="text" id="authName" placeholder="Como quer ser chamada?">
         </div>
-          <div class="forgot-password-wrap">
-  <button 
-  class="forgot-password-btn"
-  type="button"
-  onclick="forgotPassword()"
->
-  Esqueci minha senha
-</button>
-</div>
+        <div class="auth-field" id="newPasswordField" style="display:none">
+          <label>Nova senha</label>
+          <input type="password" id="authNewPassword" placeholder="Digite a nova senha" autocomplete="new-password">
+        </div>
         <button class="auth-btn" onclick="doAuth()" id="authSubmitBtn">Entrar</button>
+        <button class="auth-link" type="button" id="forgotPasswordBtn" onclick="authMode('forgot')">Esqueci minha senha</button>
+        <div class="auth-secondary-actions" id="authBackActions" style="display:none">
+          <button class="auth-link" type="button" onclick="authMode('login')">Voltar para entrar</button>
+        </div>
         <div id="authMsg"></div>
       </div>
       <p class="auth-note">Seus dados de custos ficam salvos e não precisam ser<br>preenchidos novamente a cada projeto.</p>
@@ -1811,228 +1532,321 @@ body {
   </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>
 /* FORMATAÇÃO */
 function fmt(val) { return 'R$ ' + Math.round(val).toLocaleString('pt-BR'); }
 function fmtDec(val) { return 'R$ ' + val.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); }
 function fmtH(val) { return 'R$ ' + Math.round(val).toLocaleString('pt-BR') + '/h'; }
 
-/* STORAGE */
-const DB_KEY = 'precificadora_db';
-function getDB() { try { return JSON.parse(localStorage.getItem(DB_KEY)) || {}; } catch { return {}; } }
-function saveDB(db) { localStorage.setItem(DB_KEY, JSON.stringify(db)); }
+/* SUPABASE
+   Cole aqui os dados do seu projeto:
+   1. Project URL: Settings > API > Project URL
+   2. Publishable key / anon public: Settings > API > Project API keys
+*/
+const SUPABASE_URL = 'COLE_AQUI_A_URL_DO_SUPABASE';
+const SUPABASE_ANON_KEY = 'COLE_AQUI_A_CHAVE_PUBLICA_ANON';
+const SUPABASE_TABLE = 'calculator_profiles';
+
 let currentUser = null;
-function loadSession() { try { const s = JSON.parse(localStorage.getItem('precificadora_session')); if (s && s.email) return s; } catch {} return null; }
-function saveSession(u) { localStorage.setItem('precificadora_session', JSON.stringify(u)); }
-function clearSession() { localStorage.removeItem('precificadora_session'); }
+let supabaseClient = null;
+let saveTimer = null;
+let isLoadingData = false;
+
+function hasSupabaseConfig() {
+  return SUPABASE_URL.startsWith('https://') &&
+    SUPABASE_ANON_KEY.length > 40 &&
+    !SUPABASE_URL.includes('COLE_AQUI') &&
+    !SUPABASE_ANON_KEY.includes('COLE_AQUI');
+}
+
+function initSupabase() {
+  const warning = document.getElementById('authConfigWarning');
+  if (!hasSupabaseConfig()) {
+    warning.style.display = 'block';
+    return null;
+  }
+  warning.style.display = 'none';
+  supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY, {
+    auth: {
+      persistSession: true,
+      autoRefreshToken: true,
+      detectSessionInUrl: true
+    }
+  });
+  return supabaseClient;
+}
 
 /* AUTH */
-let isLoginMode = true;
+let authCurrentMode = 'login';
 
 function authMode(mode) {
-  isLoginMode = mode === 'login';
+  authCurrentMode = mode;
+  const isLogin = mode === 'login';
+  const isSignup = mode === 'signup';
+  const isForgot = mode === 'forgot';
+  const isReset = mode === 'reset';
 
   document.querySelectorAll('.auth-tab').forEach((t, i) => {
-    t.classList.toggle('active', (i === 0) === isLoginMode);
+    t.classList.toggle('active', (i === 0 && isLogin) || (i === 1 && isSignup));
   });
 
-  document.getElementById('nameField').style.display =
-    isLoginMode ? 'none' : 'block';
+  document.getElementById('authEmail').closest('.auth-field').style.display = isReset ? 'none' : 'block';
+  document.getElementById('authPassword').closest('.auth-field').style.display = (isForgot || isReset) ? 'none' : 'block';
+  document.getElementById('nameField').style.display = isSignup ? 'block' : 'none';
+  document.getElementById('newPasswordField').style.display = isReset ? 'block' : 'none';
+  document.getElementById('forgotPasswordBtn').style.display = isLogin ? 'block' : 'none';
+  document.getElementById('authBackActions').style.display = (isForgot || isReset) ? 'flex' : 'none';
 
-  document.getElementById('authSubmitBtn').textContent =
-    isLoginMode ? 'Entrar' : 'Criar conta';
-
+  const labels = {
+    login: 'Entrar',
+    signup: 'Criar conta',
+    forgot: 'Enviar e-mail de recuperação',
+    reset: 'Salvar nova senha'
+  };
+  document.getElementById('authSubmitBtn').textContent = labels[mode] || labels.login;
   document.getElementById('authMsg').innerHTML = '';
 }
 
 function showAuthMsg(msg, type = 'error') {
+  const cssType = type === 'success' ? 'ok' : type;
   document.getElementById('authMsg').innerHTML = `
-    <div class="auth-${type}">
+    <div class="auth-msg ${cssType}">
       ${msg}
     </div>
   `;
 }
 
-async function doAuth() {
+function setAuthLoading(isLoading) {
+  const btn = document.getElementById('authSubmitBtn');
+  btn.disabled = isLoading;
+  btn.textContent = isLoading ? 'Aguarde...' : ({
+    login: 'Entrar',
+    signup: 'Criar conta',
+    forgot: 'Enviar e-mail de recuperação',
+    reset: 'Salvar nova senha'
+  }[authCurrentMode] || 'Entrar');
+}
 
-  const email = document
-    .getElementById('authEmail')
-    .value
-    .trim()
-    .toLowerCase();
+function getAuthRedirectUrl() {
+  return window.location.href.split('#')[0].split('?')[0];
+}
 
-  const pass = document
-    .getElementById('authPassword')
-    .value;
+function getDisplayName(user) {
+  return user?.user_metadata?.full_name || user?.user_metadata?.name || user?.email?.split('@')[0] || 'Conta';
+}
 
-  const name = document
-    .getElementById('authName')
-    .value
-    .trim();
-
-  if (!email || !pass) {
-    showAuthMsg('Preencha e-mail e senha.');
-    return;
-  }
-
-if (isLoginMode) {
-
-  const { data, error } = await window.sb.auth.signInWithPassword({
-    email: email,
-    password: pass
-  });
-
-  if (error) {
-    showAuthMsg(error.message);
-    return;
-  }
-
+function setCurrentUserFromSupabaseUser(user) {
   currentUser = {
-    email: data.user.email,
-    name: data.user.user_metadata?.name || 'Usuário'
+    id: user.id,
+    email: user.email,
+    name: getDisplayName(user)
   };
-
-  saveSession(currentUser);
-
-  enterApp();
-
-  } else {
-
-if (!name) {
-  showAuthMsg('Informe seu nome.');
-  return;
 }
 
-const { data, error } = await window.sb.auth.signUp({
-  email: email,
-  password: pass,
-  options: {
-    data: {
-      name: name
-    }
-  }
-});
-
-if (error) {
-  showAuthMsg(error.message);
-  return;
-}
-
-showAuthMsg('Conta criada! Verifique seu e-mail ✨');
-
-return;
-
-    currentUser = {
-      email: email,
-      name: name
-    };
-
-    saveSession(currentUser);
-
-    showAuthMsg('Conta criada com sucesso!', 'success');
-
-    setTimeout(() => {
-      enterApp();
-    }, 600);
-  }
-}
-
-function doLogout() {
-  currentUser = null;
-
-  clearSession();
-
-  document.getElementById('appScreen').classList.remove('visible');
-
-  document.getElementById('authScreen').style.display = 'flex';
-
-  document.getElementById('authMsg').innerHTML = '';
-}
-function togglePassword() {
-
-  const input = document.getElementById('authPassword');
-
-  const icon = document.getElementById('eyeIcon');
-
-  if (input.type === 'password') {
-
-    input.type = 'text';
-
-    icon.innerHTML = `
-      <path d="M17.94 17.94A10.94 10.94 0 0 1 12 19
-      c-7 0-11-7-11-7a21.77 21.77 0 0 1 5.06-5.94"/>
-
-      <path d="M1 1l22 22"/>
-
-      <path d="M9.53 9.53a3 3 0 0 0 4.24 4.24"/>
-    `;
-
-  } else {
-
-    input.type = 'password';
-
-    icon.innerHTML = `
-      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/>
-
-      <circle cx="12" cy="12" r="3"/>
-    `;
-  }
-}
-  
-async function forgotPassword() {
-
-  const email = document.getElementById('authEmail').value.trim();
-
-  if (!email) {
-    showAuthMsg('Digite seu e-mail para recuperar a senha.');
+async function doAuth() {
+  if (!supabaseClient) {
+    showAuthMsg('Cole a URL e a chave pública do Supabase no arquivo antes de usar o login.');
     return;
   }
 
-  const { error } = await sb.auth.resetPasswordForEmail(email, {
-    redirectTo: window.location.origin
-  });
+  const email = document.getElementById('authEmail').value.trim().toLowerCase();
+  const pass = document.getElementById('authPassword').value;
+  const name = document.getElementById('authName').value.trim();
+  const newPass = document.getElementById('authNewPassword').value;
 
-  if (error) {
-    showAuthMsg(error.message);
-  } else {
-    showAuthMsg('Enviamos um link de recuperação para seu e-mail.', 'ok');
+  try {
+    setAuthLoading(true);
+
+    if (authCurrentMode === 'forgot') {
+      if (!email) {
+        showAuthMsg('Informe seu e-mail para receber a recuperação.');
+        return;
+      }
+      const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+        redirectTo: getAuthRedirectUrl()
+      });
+      if (error) throw error;
+      showAuthMsg('Pronto. Se o e-mail estiver cadastrado, você receberá o link para criar uma nova senha.', 'success');
+      return;
+    }
+
+    if (authCurrentMode === 'reset') {
+      if (!newPass || newPass.length < 6) {
+        showAuthMsg('Digite uma nova senha com pelo menos 6 caracteres.');
+        return;
+      }
+      const { error } = await supabaseClient.auth.updateUser({ password: newPass });
+      if (error) throw error;
+      showAuthMsg('Senha atualizada com sucesso. Você já pode continuar usando a calculadora.', 'success');
+      const { data } = await supabaseClient.auth.getUser();
+      if (data?.user) {
+        setCurrentUserFromSupabaseUser(data.user);
+        setTimeout(() => enterApp(), 500);
+      }
+      return;
+    }
+
+    if (!email || !pass) {
+      showAuthMsg('Preencha e-mail e senha.');
+      return;
+    }
+
+    if (authCurrentMode === 'login') {
+      const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password: pass });
+      if (error) throw error;
+      setCurrentUserFromSupabaseUser(data.user);
+      enterApp();
+      return;
+    }
+
+    if (!name) {
+      showAuthMsg('Informe seu nome.');
+      return;
+    }
+
+    const { data, error } = await supabaseClient.auth.signUp({
+      email,
+      password: pass,
+      options: {
+        emailRedirectTo: getAuthRedirectUrl(),
+        data: { full_name: name }
+      }
+    });
+    if (error) throw error;
+
+    if (data.session) {
+      setCurrentUserFromSupabaseUser(data.user);
+      await saveUserData();
+      enterApp();
+      return;
+    }
+
+    authMode('login');
+    showAuthMsg('Conta criada. Confirme seu e-mail para liberar o acesso.', 'success');
+  } catch (err) {
+    showAuthMsg(authErrorMessage(err));
+  } finally {
+    setAuthLoading(false);
   }
 }
 
-function enterApp() {
+function authErrorMessage(err) {
+  const msg = String(err?.message || err || '').toLowerCase();
+  if (msg.includes('invalid login credentials')) return 'E-mail ou senha inválidos.';
+  if (msg.includes('email not confirmed')) return 'Confirme seu e-mail antes de entrar.';
+  if (msg.includes('already registered') || msg.includes('user already registered')) return 'Já existe uma conta com este e-mail.';
+  if (msg.includes('password')) return 'Confira a senha. Ela precisa ter pelo menos 6 caracteres.';
+  return 'Não consegui concluir essa ação agora. Confira os dados e tente novamente.';
+}
 
+async function doLogout() {
+  currentUser = null;
+  if (supabaseClient) await supabaseClient.auth.signOut();
+  document.getElementById('appScreen').classList.remove('visible');
+  document.getElementById('authScreen').style.display = 'flex';
+  document.getElementById('authMsg').innerHTML = '';
+  authMode('login');
+}
+
+async function enterApp() {
   document.getElementById('authScreen').style.display = 'none';
-
   document.getElementById('appScreen').classList.add('visible');
-
-  document.getElementById('userNameDisplay').textContent =
-    currentUser.name;
-
-  loadUserCustos();
-
+  document.getElementById('userNameDisplay').textContent = currentUser.name;
   buildEtapaRows();
-
+  await loadUserData();
   calc();
 }
-/* CUSTOS */
+
+/* DADOS SALVOS */
 const CUSTO_FIELDS = ['c_aluguel','c_internet','c_tools','c_assinaturas','c_nuvem','c_outros','c_salario','c_reserva','c_impostos','c_horas'];
-function loadUserCustos() {
-  const db = getDB(); const user = db[currentUser.email];
-  if (user && user.custos) {
-    const c = user.custos;
-    CUSTO_FIELDS.forEach(id => { if (c[id] !== undefined) document.getElementById(id).value = c[id]; });
-    document.getElementById('c_horas_out').textContent = document.getElementById('c_horas').value + 'h';
-  }
+const PROJECT_FIELDS = ['tipo_projeto','margem','urgencia','complexidade','chk_desconto','pct_desconto','chk_parcela','taxa_mensal','max_parcelas'];
+
+function getAppState() {
+  const state = {};
+  [...CUSTO_FIELDS, ...PROJECT_FIELDS].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    state[id] = el.type === 'checkbox' ? el.checked : el.value;
+  });
+  ETAPAS.forEach(e => {
+    const el = document.getElementById('h_' + e.id);
+    if (el) state['h_' + e.id] = el.value;
+  });
+  return state;
 }
-let saveTimer = null;
-function onCustoChange() { calc(); clearTimeout(saveTimer); saveTimer = setTimeout(saveUserCustos, 800); }
-function saveUserCustos() {
-  if (!currentUser) return;
-  const db = getDB(); if (!db[currentUser.email]) return;
-  const custos = {}; CUSTO_FIELDS.forEach(id => { custos[id] = document.getElementById(id).value; });
-  db[currentUser.email].custos = custos; saveDB(db);
+
+function applyAppState(state = {}) {
+  isLoadingData = true;
+  Object.entries(state).forEach(([id, value]) => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    if (el.type === 'checkbox') {
+      el.checked = Boolean(value);
+      if (id === 'chk_desconto') togglePagamento('desconto');
+      if (id === 'chk_parcela') togglePagamento('parcela');
+    } else {
+      el.value = value;
+    }
+  });
+  document.getElementById('c_horas_out').textContent = document.getElementById('c_horas').value + 'h';
+  document.getElementById('margem_out').textContent = document.getElementById('margem').value + '%';
+  isLoadingData = false;
+}
+
+async function loadUserData() {
+  if (!supabaseClient || !currentUser) return;
+  isLoadingData = true;
+  const { data, error } = await supabaseClient
+    .from(SUPABASE_TABLE)
+    .select('full_name, app_state')
+    .eq('user_id', currentUser.id)
+    .maybeSingle();
+  isLoadingData = false;
+
+  if (error) {
+    showSaveIndicator('Erro ao carregar');
+    return;
+  }
+
+  if (data?.full_name) {
+    currentUser.name = data.full_name;
+    document.getElementById('userNameDisplay').textContent = currentUser.name;
+  }
+  if (data?.app_state) applyAppState(data.app_state);
+}
+
+function onCustoChange() {
+  calc();
+  scheduleSaveUserData();
+}
+
+function scheduleSaveUserData() {
+  if (isLoadingData || !currentUser) return;
+  clearTimeout(saveTimer);
+  saveTimer = setTimeout(saveUserData, 800);
+}
+
+async function saveUserData() {
+  if (!supabaseClient || !currentUser) return;
+  const { error } = await supabaseClient
+    .from(SUPABASE_TABLE)
+    .upsert({
+      user_id: currentUser.id,
+      email: currentUser.email,
+      full_name: currentUser.name,
+      app_state: getAppState(),
+      updated_at: new Date().toISOString()
+    }, { onConflict: 'user_id' });
+
+  showSaveIndicator(error ? 'Erro ao salvar' : 'Salvo');
+}
+
+function showSaveIndicator(text) {
   const ind = document.getElementById('saveIndicator');
-  ind.classList.add('show'); setTimeout(() => ind.classList.remove('show'), 2000);
+  ind.textContent = text;
+  ind.classList.add('show');
+  setTimeout(() => ind.classList.remove('show'), 2000);
 }
 
 /* ETAPAS */
@@ -2146,6 +1960,7 @@ function calcProjeto() {
   renderBars(horasTotal, ch);
   renderAnalise(base, final, ch, horasTotal);
   updatePrintPage(base, comMargem, final, horasTotal, horaReal, temDesconto, pctDesc, precoComDesconto, temParcela, taxaTotal);
+  scheduleSaveUserData();
 }
 
 /* PARCELAMENTO */
@@ -2337,83 +2152,32 @@ function showTab(name) {
 }
 
 /* INIT */
-(function init() {
-  const hash = window.location.hash;
+(async function init() {
+  authMode('login');
+  const client = initSupabase();
+  if (!client) return;
 
-if (hash.includes('type=recovery')) {
+  client.auth.onAuthStateChange(async (event, session) => {
+    if (event === 'PASSWORD_RECOVERY') {
+      authMode('reset');
+      showAuthMsg('Digite sua nova senha para concluir a recuperação.', 'success');
+      document.getElementById('authScreen').style.display = 'flex';
+      document.getElementById('appScreen').classList.remove('visible');
+      return;
+    }
 
-  document.getElementById('resetPasswordModal')
-    .style.display = 'flex';
-}
-  const session = loadSession();
-  if (session) { currentUser = session; document.getElementById('authScreen').style.display = 'none'; enterApp(); }
+    if (session?.user && !currentUser && event === 'SIGNED_IN') {
+      setCurrentUserFromSupabaseUser(session.user);
+      await enterApp();
+    }
+  });
+
+  const { data } = await client.auth.getSession();
+  if (data?.session?.user) {
+    setCurrentUserFromSupabaseUser(data.session.user);
+    await enterApp();
+  }
 })();
 </script>
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script>
-const SUPABASE_URL = 'https://seowusebxomcgxupdopv.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_Am0IJLIXRX-sTpt6JccT2g_JBfux9AC';
-
-window.sb = window.supabase.createClient(
-  SUPABASE_URL,
-  SUPABASE_KEY
-);
-</script>
-  <div id="resetModal" class="reset-modal">
-
-  <div class="reset-box">
-
-    <h3>Crie sua nova senha</h3>
-
-    <p>
-      Digite uma nova senha para acessar sua conta.
-    </p>
-
-    <input
-      type="password"
-      id="newPassword"
-      placeholder="Nova senha"
-    >
-
-    <input
-      type="password"
-      id="confirmPassword"
-      placeholder="Confirmar senha"
-    >
-
-    <button onclick="updatePassword()">
-      Salvar nova senha
-    </button>
-
-  </div>
-
-</div>
-  <div id="resetPasswordModal" class="reset-modal" style="display:none;">
-
-  <div class="reset-box">
-
-    <h2>Nova senha</h2>
-
-    <input
-      type="password"
-      id="newPassword"
-      placeholder="Digite sua nova senha"
-    >
-
-    <input
-      type="password"
-      id="confirmPassword"
-      placeholder="Confirme sua nova senha"
-    >
-
-    <button onclick="updatePassword()">
-      Salvar nova senha
-    </button>
-
-    <div id="resetMsg"></div>
-
-  </div>
-
-</div>
 </body>
 </html>
